@@ -4,6 +4,8 @@ sillyTool is a silly lil tool to spam and be annoying
 I do not condone spamming innapropriate stuff using this.
 and I am not responsible if you get banned or something, use at your own risk!
 
+btw this works only on windows cause im too lazy to make it work eveywhere
+
 ## Dependencies
 [Tkinter](https://docs.python.org/3/library/tkinter.html)
 [PyAutoGUI](https://pypi.org/project/PyAutoGUI/)
