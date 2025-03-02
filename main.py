@@ -5,6 +5,8 @@ import tkinter as tk
 from tkinter.filedialog import askopenfilename
 tk.Tk().withdraw()
 
+# Made by Efendo
+
 options = [
     "Generic Spammer",
     "Spam from a sillyScript",
@@ -57,16 +59,17 @@ def GenericSpammer():
     os.system('cls' if os.name == 'nt' else 'clear')
     message=input("Message: ")
     beforesend=input("Key to send before typing message (leave empty for nothing): ")
-    interval=float(input("Interval: "))
+    delay=float(input("Delay: "))
+    interval=float(input("Interval between letters: "))
     beforeStart=int(input("Time before start: "))
     repeat=int(input("How many messages: "))
     t.sleep(beforeStart)
     for i in range(0, repeat):
         pag.press(beforesend)
-        pag.write(message)
+        pag.write(message, interval=interval)
         pag.press("enter")
         print(f"Sent message! {repeat-i} messages left.")
-        t.sleep(interval)
+        t.sleep(delay)
     print("Finished!")
     main()
 
@@ -75,14 +78,15 @@ def SpamFromFile():
     file=askopenfilename()
     messages=parse(file)
     beforesend=input("Key to send before typing message (leave empty for nothing): ")
-    interval=float(input("Interval: "))
+    delay=float(input("delay: "))
+    interval=float(input("Interval between letters: "))
     beforeStart=int(input("Time before start: "))
     t.sleep(beforeStart)
     for message in messages:
         pag.press(beforesend)
-        pag.write(message)
+        pag.write(message, interval=interval)
         pag.press("enter")
-        t.sleep(interval)
+        t.sleep(delay)
     print("Finished!")
     main()
     
